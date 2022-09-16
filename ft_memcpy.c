@@ -6,11 +6,11 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 22:24:10 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/16 22:33:54 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/16 23:10:50 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lilbft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

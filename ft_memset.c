@@ -6,7 +6,7 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 22:15:45 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/16 22:19:08 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/16 23:10:21 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
+	unsigned char	*tmp;
+
+	tmp = (unsigned char *)b;
+
 	while (len--)
-		*b++ = c;
+		*tmp++ = c;
 	return (b);
 }

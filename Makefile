@@ -6,7 +6,7 @@
 #    By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:49:18 by csitja-b          #+#    #+#              #
-#    Updated: 2022/09/16 21:57:35 by csitja-b         ###   ########.fr        #
+#    Updated: 2022/09/16 23:15:47 by csitja-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,17 +21,16 @@ SRC = ft_isalpha.c ft_isprint.c ft_memset.c ft_bzero.c ft_isascii.c ft_memcpy.c 
 
 OBJ = $(SRC:.c=.o)
 
-INCLUDE = ./
+INCLUDE = -I ./
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-.PHONY : clean
 clean: 
 	$(RM) $(OBJ)
 
@@ -39,3 +38,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re : fclean all
+
+.PHONY: all clean fclean re

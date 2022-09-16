@@ -6,7 +6,7 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 22:35:27 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/16 22:46:12 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/16 23:12:27 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char *d;
 	unsigned const char *s;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	d = dst;
@@ -27,8 +27,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	if (dst < src)
 	{
-		while (i < len)
-			d[i++] = s[i];
+		while (i++ < len)
+			d[i] = s[i];
 	}
 	else
 	{
