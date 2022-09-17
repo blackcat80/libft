@@ -6,7 +6,7 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 19:13:29 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/17 22:36:04 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/17 22:49:12 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c - ('a' - 'A'));
+		return (c + ('a' - 'A'));
 	return (c);
 }
