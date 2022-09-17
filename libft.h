@@ -6,7 +6,7 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:41:03 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/17 21:41:12 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/17 22:37:09 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 # include<unistd.h>
 # include<stdlib.h>
-# include<ctype.h>
+
+# define TRUE	(int)1
+# define FALSE	(int)0
+
+typedef	unsigned int t_unt
 
 int	ft_isalpha(int c);
 

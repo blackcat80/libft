@@ -6,7 +6,7 @@
 #    By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:49:18 by csitja-b          #+#    #+#              #
-#    Updated: 2022/09/17 21:41:19 by csitja-b         ###   ########.fr        #
+#    Updated: 2022/09/17 22:37:14 by csitja-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,10 @@ OBJ = $(SRC:.c=.o)
 
 INCLUDE = -I ./
 
+all: $(NAME)
+
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
-all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
 	ar -rcs $(NAME) $(OBJ)
@@ -42,4 +42,4 @@ fclean: clean
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re 
