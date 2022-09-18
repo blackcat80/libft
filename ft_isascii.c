@@ -6,13 +6,13 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 22:08:02 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/16 22:10:34 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:09:27 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

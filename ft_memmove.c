@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 22:35:27 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/17 23:15:07 by csitja-b         ###   ########.fr       */
+/*   Created: 2022/09/18 21:10:31 by csitja-b          #+#    #+#             */
+/*   Updated: 2022/09/18 22:13:12 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,24 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	unsigned const char *s;
 	size_t	i;
+	char	*pt_dst;
+	char	*pt_src;
 
-	i = 0;
-	d = dst;
-	s = src;
-	if (dst == src)
-		return (dst);
-	if (dst < src)
+	if (!src && !dst)
+		return (NULL);
+	i = -1;
+	pt_dst = (char *)dst;
+	pt_src = (char *)src;
+	if (pt_src > pt_dst)
 	{
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
+		while (++i < len)
+			pt_dst[i] = pt_src[i];
+	}	
 	else
 	{
-		while (len > 0)
-		{
-			d[len - 1] = s[len - 1];
-			len--;
-		}
+		while (++i != len)
+			pt_dst[len - i - 1] = pt_src[len - i - 1];
 	}
 	return (dst);
 }

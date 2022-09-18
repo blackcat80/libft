@@ -6,13 +6,13 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 22:11:13 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/16 23:18:01 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:10:40 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
