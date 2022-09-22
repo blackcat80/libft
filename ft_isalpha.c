@@ -6,7 +6,7 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 21:57:52 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/18 18:08:51 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:37:27 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,10 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
+
+/*int     main(void)
+{
+        printf("%d\n", ft_isalpha('h'));
+        printf("%d\n", ft_isalpha('2'));
+        return (0);
+}*/

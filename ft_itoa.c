@@ -6,37 +6,63 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:13:21 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/20 18:37:48 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:07:04 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	ft_absval(int n)
 {
-	char	*str;
-	long	nbr;
-	size_t	size;
+	if (n < 0)
+		n = -n;
+	return (n);
+}
 
-	nbr = n;
-	size = n > 0 ? 0 : 1;
-	nbr = nbr > 0 ? nbr : -nbr;
+static int	ft_nbrlen(long n)
+{
+	int	size;
+
+	size = 0;
+	if (n == 0)
+		return (1);
+	else if (n < 0)
+		size++;
 	while (n)
 	{
 		n /= 10;
 		size++;
 	}
-	if (!(str = (char *)malloc(size + 1)))
-		return (0);
-	*(str + size--) = '\0';
-	while (nbr > 0)
+	return (size);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		size;
+
+	size = ft_nbrlen(n);
+	str = (char *)malloc(sizeof(char) * size + 1);
+	if (!str)
+		return (NULL);
+	str[size] = '\0';
+	if (n < 0)
+		str[0] = '-';
+	if (n == 0)
+		str[0] = '0';
+	while (n)
 	{
-		*(str + size--) = nbr % 10 + '0';
-		nbr /= 10;
+		--size;
+		str[size] = ft_absval(n % 10) + '0';
+		n /= 10;
 	}
-	if (size == 0 && str[1] == '\0')
-		*(str + size) = '0';
-	else if (size == 0 && str[1] != '\0')
-		*(str + size) = '-';
 	return (str);
 }
+/*
+int	main(void)
+{
+	printf("%s\n", ft_itoa(-623));
+	printf("%s\n", ft_itoa(156));
+	printf("%s\n", ft_itoa(-0));
+	return (0);
+}*/
