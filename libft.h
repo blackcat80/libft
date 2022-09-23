@@ -6,7 +6,7 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:41:03 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/22 18:47:36 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/23 20:21:38 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ char		*ft_strdup(const char *s1);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
+char		*ft_strjoin(char const *s1, char const *s2);
 size_t		ft_strlen(const char *str);
+char		*ft_strtrim(char const *s1, char const *set);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
