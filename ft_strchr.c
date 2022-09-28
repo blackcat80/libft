@@ -6,11 +6,12 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 19:17:42 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/18 21:14:29 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:39:01 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include<string.h>
 
 char	*ft_strchr(const char *s, int c)
 {	
@@ -27,3 +28,13 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
+
+/*
+int	main(void)
+{
+	char s[] = "Barcelona";
+
+	printf("%p\n", strchr("Ramon", 'a'));
+	printf("%\n", ft_strchr(s, 'l'));
+	return (0);
+}*/

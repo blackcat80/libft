@@ -6,20 +6,20 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 20:21:31 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/23 20:21:41 by csitja-b         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:56:00 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_len(char const *s, unsigned int start, size_t len)
+static size_t	ft_len(char const *s, unsigned int start, size_t len)
 {
 	size_t	longitud;
 
 	longitud = 0;
 	if (ft_strlen(s) == 0)
 		longitud = 0;
-	else if (len > ft_strlen(s))
+	else if (len > ft_strlen(s) || (start + len) == (ft_strlen(s) + 1))
 		longitud = ft_strlen(s) - start;
 	else
 		longitud = len;
