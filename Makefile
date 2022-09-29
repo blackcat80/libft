@@ -6,12 +6,13 @@
 #    By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:49:18 by csitja-b          #+#    #+#              #
-#    Updated: 2022/09/28 22:34:53 by csitja-b         ###   ########.fr        #
+#    Updated: 2022/09/29 16:11:08 by csitja-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 RM = rm -f
 NAME = libft.a
+BONUS = .bonus
 HEADER = libft.h
 CFLAGS = -Wall -Wextra -Werror  
 
@@ -34,18 +35,21 @@ all: $(NAME)
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-bonus: $(NAME) $(OBJ) $(OBJ_BONUS)
-	ar -rcs $(NAME) $(OBJ) $(OBJS_BONUS)
+$(NAME): $(OBJ) $(HEADER)
+	ar -rcs $(NAME) $(OBJ)
 
-$(NAME): $(OBJ) $(OBJ_BONUS) $(HEADER)
+bonus: $(BONUS)
+
+$(BONUS): $(OBJ) $(OBJ_BONUS) $(HEADER)
+	touch $@
 	ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean: 
 	$(RM) $(OBJ) $(OBJ_BONUS)
 	
-fclean: clean
-	$(RM) $(NAME)
+fclean: clean 
+	$(RM) $(NAME) $(BONUS)
 
 re : fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re bonus
