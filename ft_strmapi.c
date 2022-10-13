@@ -29,17 +29,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
-static char	ft_mayus(unsigned int i, char c)
-{
-	return (c - 32);
-}
-
-
-int main (void)
-{
-	printf("%s\n", ft_strmapi("Barcelona", ft_mayus));
-	return (0);
-}
-
-
