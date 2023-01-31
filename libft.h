@@ -6,7 +6,7 @@
 /*   By: csitja-b <csitja-b@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:41:03 by csitja-b          #+#    #+#             */
-/*   Updated: 2022/09/28 22:34:37 by csitja-b         ###   ########.fr       */
+/*   Updated: 2023/01/31 16:02:42 by csitja-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
+# include <stdarg.h>
+# include<fcntl.h>
+# include<limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 600
+# endif
 
 typedef struct s_list
 {
@@ -72,5 +80,40 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// Ft_printf Libreria
+
+int			ft_printf(const char *format, ...);
+
+// funciones en functions_1
+
+void		print_char(va_list arg, int *arg_len);
+void		print_int(va_list arg, int *arg_len);
+void		print_uint(va_list arg, int *arg_len);
+void		print_str(va_list arg, int *arg_len);
+
+// funciones en functions_3
+
+void		ft_putchar(char c, int *base_len);
+void		ft_putstr(char *s, int *base_len);
+void		ft_putnbr(int n, int *base_len);
+void		ft_putnbr_u(unsigned int n, int *base_len);
+void		ft_putnbr_base_ul(unsigned long n, char *base, int *len);
+
+// funciones en functions_2
+
+void		print_hexa(va_list arg, int *arg_len, char c);
+void		print_address_hexa(va_list arg, int *arg_len);
+int			check_base(char *base);
+void		ft_putnbr_base_u(unsigned int n, char *base, int *len);
+
+// funciones get next line
+char		*true_free(char **str);
+char		*ft_cutline(char *butterp);
+char		*ft_returnline(char *bufferp);
+char		*ft_addbuffer(char *bufferp, char *buffer);
+char		*ft_read(int fd, char *buffer);
+char		*get_next_line(int fd);
+char		*get_next_line_bonus(int fd);
 
 #endif
